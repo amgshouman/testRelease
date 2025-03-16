@@ -15,6 +15,13 @@
       {
         "assets": ["CHANGELOG.md"]
       }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "package-lock.json"],
+        "message": "chore(release): update package.json to version ${nextRelease.version} [skip ci]"
+      }
     ]
   ]
 }

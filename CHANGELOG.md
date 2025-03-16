@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/amgshouman/testRelease/compare/v1.1.1...v1.2.0) (2025-03-16)
+
+
+### Bug Fixes
+
+* **testtt:** testtt222 ([e9fc317](https://github.com/amgshouman/testRelease/commit/e9fc3172ced15523a68478a8d1d33bac398826e5))
+
+
+### Features
+
+* **add:** testinggg ([70d76e9](https://github.com/amgshouman/testRelease/commit/70d76e9aef1f2ca742596cff16293c0034c27ef3))
+
 ## [1.1.1](https://github.com/amgshouman/testRelease/compare/v1.1.0...v1.1.1) (2025-03-16)
 
 
