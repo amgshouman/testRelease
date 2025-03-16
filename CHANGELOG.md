@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/amgshouman/testRelease/compare/v1.2.1...v1.2.2) (2025-03-16)
+
+
+### Bug Fixes
+
+* **test:** test ([f2bdce9](https://github.com/amgshouman/testRelease/commit/f2bdce9fb011b1cb98682723a760bc66cc43040f))
+
 ## [1.2.1](https://github.com/amgshouman/testRelease/compare/v1.2.0...v1.2.1) (2025-03-16)
 
 
