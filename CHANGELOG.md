@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/amgshouman/testRelease/compare/v1.0.0...v1.1.0) (2025-03-16)
+
+
+### Features
+
+* **add:** test ([3cc8324](https://github.com/amgshouman/testRelease/commit/3cc83245dd7674e3de16ac14a26f95864a2b3416))
+
 # 1.0.0 (2025-03-16)
 
 
