@@ -7,7 +7,6 @@
       "releaseRules": [
         {
           "type": "feat",
-          "scope": "test",
           "release": "minor"
         }
       ],
