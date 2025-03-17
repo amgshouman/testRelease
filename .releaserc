@@ -4,17 +4,13 @@
     [
       "@semantic-release/commit-analyzer",
       {
-        "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$"
-        }
+
       }
     ],
     [
       "@semantic-release/release-notes-generator",
       {
-        "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$"
-        }
+  
       }
     ],
     "@semantic-release/changelog",
