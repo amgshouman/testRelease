@@ -3,13 +3,15 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     {
+      "parserOpts": {
+          "headerPattern": "/^[UI-\\d+] (\\w+)(?:(([\\w-]+)))?: (.+)$/"
+        },
+      "preset": "conventionalcommits",
       "releaseRules": [
         {
-          "type": "feat",
-          "scope": "test",
-          "message": "^\\[UI-\\d+\\] feat\\(test\\): .+",
+          "message": "*feat*",
           "release": "minor"
-        }
+        } 
       ]
     },
     "@semantic-release/release-notes-generator",
