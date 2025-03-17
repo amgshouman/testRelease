@@ -1,5 +1,5 @@
 {
-  "branches": ["master"],
+  "branches": ["main"],
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
@@ -7,7 +7,10 @@
         "parserOpts": {
           "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
           "headerCorrespondence": ["type", "scope", "subject"]
-        }
+        },
+        "releaseRules": [
+          { "scope": "chore", "release": false }
+        ]
       }
     ],
     [
@@ -16,7 +19,10 @@
         "parserOpts": {
           "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
           "headerCorrespondence": ["type", "scope", "subject"]
-        }
+        },
+        "releaseRules": [
+          { "scope": "chore", "release": false }
+        ]
       }
     ],
     "@semantic-release/changelog",
