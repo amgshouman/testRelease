@@ -1,3 +1,18 @@
+# [1.4.0](https://github.com/amgshouman/testRelease/compare/v1.3.0...v1.4.0) (2025-03-17)
+
+
+### Bug Fixes
+
+* **project1:** test ([18c0e53](https://github.com/amgshouman/testRelease/commit/18c0e5374e5e6bf15d59fdc5a9a0de5018130fed))
+* **project1:** test ([191cef9](https://github.com/amgshouman/testRelease/commit/191cef90aed5fe786e9115642c65fa483b6e0a00))
+* **project1:** test ([05eee68](https://github.com/amgshouman/testRelease/commit/05eee68321826edc3b622fa2e3d4a419dba9cafe))
+* **project2:** testtt ([f67cf0f](https://github.com/amgshouman/testRelease/commit/f67cf0ff6594bcd0d30e73d74dbcf4d21336024c))
+
+
+### Features
+
+* **testttt:** testttttingg ([fa23624](https://github.com/amgshouman/testRelease/commit/fa23624cb4e8c1515a92484af197da7d1d48dba8))
+
 # [1.3.0](https://github.com/amgshouman/testRelease/compare/v1.2.3...v1.3.0) (2025-03-17)
 
 
