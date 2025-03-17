@@ -3,12 +3,13 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     {
-       "releaseRules": [
+      "releaseRules": [
         {
-         "type": "[UI-*",
-          "message": "*feat*",
+          "type": "feat",
+          "scope": "test",
+          "message": "^\\[UI-\\d+\\] feat\\(test\\): .+",
           "release": "minor"
-        } 
+        }
       ]
     },
     "@semantic-release/release-notes-generator",
