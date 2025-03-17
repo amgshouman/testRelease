@@ -7,8 +7,8 @@
       "releaseRules": [
         {
           "type": "feat",
-          "release": "minor",
-          "message": "^\\[UI-\\d+\\] feat\\(.+\\): .+"
+          "scope": ".*",  // Match any scope
+          "release": "minor" // You can adjust this to 'patch', 'major', etc.
         }
       ]
     },
