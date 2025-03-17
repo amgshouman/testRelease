@@ -1,20 +1,28 @@
 {
-  "branches": ["main"],
+  "branches": ["master"],
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\(\\w+)\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$"
-        }
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerCorrespondence": ["type", "scope", "subject"]
+        },
+        "releaseRules": [
+          { "scope": "chore", "release": false }
+        ]
       }
     ],
     [
       "@semantic-release/release-notes-generator",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\(\\w+)\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$"
-        }
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerCorrespondence": ["type", "scope", "subject"]
+        },
+        "releaseRules": [
+          { "scope": "chore", "release": false }
+        ]
       }
     ],
     "@semantic-release/changelog",
@@ -34,7 +42,7 @@
       "@semantic-release/git",
       {
         "assets": ["package.json", "CHANGELOG.md"],
-        "message": "chore(release): update package.json version to ${nextRelease.version} and CHANGELOG.md"
+        "message": "[UI-1] chore(release): update package.json version to v${nextRelease.version} and CHANGELOG.md"
       }
     ]
   ]
