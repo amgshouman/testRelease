@@ -1,19 +1,22 @@
 {
   "branches": ["main"],
   "plugins": [
-    "@semantic-release/commit-analyzer",
-    {
-      "parserOpts": {
-        "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
-        "headerCorrespondence": ["type", "scope", "subject"]
-        }, 
-      "releaseRules": [
-        {
-          "type": "feat",
-          "release": "minor"
-        } 
-      ]
-    },
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "parserOpts": {
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerCorrespondence": ["type", "scope", "subject"]
+        },
+        "preset":"angular",
+        "releaseRules": [
+          {
+            "type": "feat",
+            "release": "minor"
+          }
+        ]
+      }
+    ],
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
