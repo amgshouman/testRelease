@@ -5,7 +5,7 @@
     {
       "parserOpts": {
           "headerPattern": "/^[UI-\\d+] (\\w+)(?:(([\\w-]+)))?: (.+)$/"
-        },
+        }, 
       "preset": "conventionalcommits",
       "releaseRules": [
         {
