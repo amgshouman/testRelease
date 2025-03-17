@@ -5,6 +5,7 @@
     {
        "releaseRules": [
         {
+         "type": "[UI-*",
           "message": "*feat*",
           "release": "minor"
         } 
