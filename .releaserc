@@ -10,7 +10,7 @@
           "scope": ".*",  
           "message": "^\\[UI-\\d+\\] feat\\(.+\\): .+",
           "release": "minor"
-        }
+        } 
       ]
     },
     "@semantic-release/release-notes-generator",
