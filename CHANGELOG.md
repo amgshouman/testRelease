@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/amgshouman/testRelease/compare/v1.5.0...v1.6.0) (2025-03-17)
+
+
+### Features
+
+* **test:** okok1 ([3e67c54](https://github.com/amgshouman/testRelease/commit/3e67c542ff3d687b57766fce92c7edc8fa2a7458))
+
 # [1.5.0](https://github.com/amgshouman/testRelease/compare/v1.4.0...v1.5.0) (2025-03-17)
 
 # [1.4.0](https://github.com/amgshouman/testRelease/compare/v1.3.0...v1.4.0) (2025-03-17)
