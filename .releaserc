@@ -17,7 +17,16 @@
         ]
       }
     ],
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "angular",
+        "parserOpts": {
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerCorrespondence": ["type", "scope", "subject"]
+        }
+      }
+    ],
     "@semantic-release/changelog",
     [
       "@semantic-release/npm",
