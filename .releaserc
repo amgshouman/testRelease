@@ -6,9 +6,7 @@
       "preset": "conventionalcommits",
       "releaseRules": [
         {
-          "type": "feat",
-          "scope": ".*",  
-          "message": "^\\[UI-\\d+\\] feat\\(.+\\): .+",
+          "message": "*feat*",
           "release": "minor"
         } 
       ]
