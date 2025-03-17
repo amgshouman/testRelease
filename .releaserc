@@ -8,13 +8,7 @@
           "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
           "headerCorrespondence": ["type", "scope", "subject"]
         },
-        "preset":"angular",
-        "releaseRules": [
-          {
-            "type": "feat",
-            "release": "minor"
-          }
-        ]
+        "preset":"angular"
       }
     ],
     [
