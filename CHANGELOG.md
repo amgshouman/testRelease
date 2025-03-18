@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/amgshouman/testRelease/compare/v1.9.0...v1.10.0) (2025-03-18)
+
+
+### Features
+
+* **!:** send an email to the customer when a product ([8a23b8a](https://github.com/amgshouman/testRelease/commit/8a23b8ac0d819bcfdac16f333a42c91443d75687))
+
 # [1.9.0](https://github.com/amgshouman/testRelease/compare/v1.8.0...v1.9.0) (2025-03-18)
 
 
