@@ -5,7 +5,10 @@
       "@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-          "headerPattern":  "^(\\w+)(!)?(?:\\(([-\\w]+)\\))?: (.+)$"
+          "headerPattern":  "^(\\w+)(!)?(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerCorrespondence": ["type", "breaking", "scope", "subject"]
+
+
         }
       }
     ],
@@ -13,7 +16,8 @@
       "@semantic-release/release-notes-generator",
       {
         "parserOpts": {
-          "headerPattern": "^(\\w+)(!)?(?:\\(([-\\w]+)\\))?: (.+)$"
+          "headerPattern": "^(\\w+)(!)?(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerCorrespondence": ["type", "breaking", "scope", "subject"]
         }
       }
     ],
