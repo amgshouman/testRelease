@@ -2,14 +2,12 @@
   "branches": ["main"],
   "plugins": [
     [
-      "@semantic-release/commit-analyzer",
+"@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\((\\w+)\\))?(!?): (.*)$",
-          "headerCorrespondence": ["type", "scope", "breaking", "subject"],
-          "breakingPattern": ".*(!).*"
-        }
-        ,
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
+          "headerCorrespondence": ["type", "scope", "breaking", "subject"]
+        },
         "releaseRules": [
           { "breaking": true, "release": "major" },
           { "type": "feat", "release": "minor" },
