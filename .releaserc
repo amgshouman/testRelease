@@ -5,7 +5,7 @@
       "@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:!?:)? (.*)$"
+          "headerPattern": "^\\[UI-(\\d+)\\] (\\w+)(\\(([^)]+)\\))?(?:(!)?:)? (.*)$"
         }
       }
     ],
@@ -13,7 +13,7 @@
       "@semantic-release/release-notes-generator",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:!?:)? (.*)$"
+          "headerPattern": "^\\[UI-(\\d+)\\] (\\w+)(\\(([^)]+)\\))?(?:(!)?:)? (.*)$"
         }
       }
     ],
