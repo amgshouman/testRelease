@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/amgshouman/testRelease/compare/v3.0.0...v4.0.0) (2025-03-18)
+
+
+### Features
+
+* change API response structure ([e1c9a42](https://github.com/amgshouman/testRelease/commit/e1c9a42940c53c18f940ce3c8f6d942352442292))
+
+
+### BREAKING CHANGES
+
+* The API response structure has changed.
+
 # [3.0.0](https://github.com/amgshouman/testRelease/compare/v2.0.0...v3.0.0) (2025-03-18)
 
 
