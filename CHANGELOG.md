@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/amgshouman/testRelease/compare/v1.8.0...v1.9.0) (2025-03-18)
+
+
+### Features
+
+* **!:** okok1 ([d7e045a](https://github.com/amgshouman/testRelease/commit/d7e045a8e93010c53fe8cb470b4b965cfe50a94f))
+* **!:** okok1 ([1a82505](https://github.com/amgshouman/testRelease/commit/1a825050e0490a6be5393a45148b3395cb8e1a7d))
+* **!:** okok1 ([c82fa58](https://github.com/amgshouman/testRelease/commit/c82fa5861719a1030a4c0f141d7de51621f54e6f))
+* **!:** okok1 ([f026760](https://github.com/amgshouman/testRelease/commit/f026760a59e4eafc60497180ab725e20024616d6))
+* **!:** okok1 ([44df512](https://github.com/amgshouman/testRelease/commit/44df51238540154543f2d01287e82c19baa1ea08))
+* **!:** send an email to the customer when a product ([5669773](https://github.com/amgshouman/testRelease/commit/5669773c333e0dce9e06373564913f13eeb09d80))
+* **!:** send an email to the customer when a product ([1f295f7](https://github.com/amgshouman/testRelease/commit/1f295f7656d28c61735b2c1f1e45e84a70d0a553))
+
 # [1.8.0](https://github.com/amgshouman/testRelease/compare/v1.7.0...v1.8.0) (2025-03-18)
 
 
