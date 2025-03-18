@@ -1,3 +1,13 @@
+## [8.0.0](https://github.com/amgshouman/testRelease/compare/v7.0.0...v8.0.0) (2025-03-18)
+
+### ⚠ BREAKING CHANGES
+
+* **api:** send an email to the customer when a product is shipped
+
+### Features
+
+* **api:** send an email to the customer when a product is shipped ([a5c3476](https://github.com/amgshouman/testRelease/commit/a5c34765c253568d174c62c06eddd87d99780c5f))
+
 ## [7.0.0](https://github.com/amgshouman/testRelease/compare/v6.0.0...v7.0.0) (2025-03-18)
 
 ### ⚠ BREAKING CHANGES
