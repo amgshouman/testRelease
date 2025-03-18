@@ -9,7 +9,14 @@
           "headerCorrespondence": ["type", "scope", "breaking", "subject"],
           "breakingPattern": ".*(!).*"
         }
+        ,
+        "releaseRules": [
+          { "breaking": true, "release": "major" },
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" }
+        ]
       }
+      
     ],
 
     
