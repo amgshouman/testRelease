@@ -1,3 +1,10 @@
+# [11.10.0](https://github.com/amgshouman/testRelease/compare/v11.9.0...v11.10.0) (2025-03-18)
+
+
+### Features
+
+* **test:** introduce a breaking change ([a5de86e](https://github.com/amgshouman/testRelease/commit/a5de86e5a85a8cfb6ee41df6e20d74f7ad474c60))
+
 # [11.9.0](https://github.com/amgshouman/testRelease/compare/v11.8.0...v11.9.0) (2025-03-18)
 
 
