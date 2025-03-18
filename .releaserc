@@ -11,11 +11,12 @@
         "releaseRules": [
           { "breaking": true, "release": "major" },
           { "type": "feat", "release": "minor" },
-          { "type": "fix", "release": "patch" }
+          { "type": "fix", "release": "patch" },
+          { "breaking": "!", "release": "major" } 
         ]
       }
       
-      
+
       
     ],
 
