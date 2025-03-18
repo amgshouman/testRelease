@@ -1,3 +1,10 @@
+# [11.4.0](https://github.com/amgshouman/testRelease/compare/v11.3.0...v11.4.0) (2025-03-18)
+
+
+### Features
+
+* **api:** ! ([b066658](https://github.com/amgshouman/testRelease/commit/b06665877699dc414f741e53dddcb14147b1df33))
+
 # [11.3.0](https://github.com/amgshouman/testRelease/compare/v11.2.0...v11.3.0) (2025-03-18)
 
 
