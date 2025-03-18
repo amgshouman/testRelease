@@ -5,10 +5,8 @@
       "@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-          "headerPattern":  "^\\[UI-\\d+\\]\\s+(\\w+)(!)?(?:\\(([-\\w]+)\\))?: (.+)$",
+          "headerPattern": "^\\[UI-\\d+\\]\\s+(\\w+)(!)?(?:\\(([-\\w]+)\\))?: (.+)$",
           "headerCorrespondence": ["type", "breaking", "scope", "subject"]
-
-
         },
         "releaseRules": [
           { "breaking": "!", "release": "major" },
