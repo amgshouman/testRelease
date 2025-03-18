@@ -13,10 +13,10 @@
       "@semantic-release/release-notes-generator",
       {
         "parserOpts": {
-          "headerPattern": "^^\\[UI-\\d+\\] (?<type>\\w+)(?<breaking>!)?(?:\\((?<scope>[-\\w]+)\\))?: (?<subject>.+)$"
+          "headerPattern": "^\\[UI-\\d+\\] (?<type>\\w+)(?<breaking>!)?(?:\\((?<scope>[-\\w]+)\\))?: (?<subject>.+)$"
         }
       }
-      
+
     ],
     "@semantic-release/changelog",
     [
