@@ -6,7 +6,7 @@
       {
         "parserOpts": {
           "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\((\\w+)\\))?(!?): (.*)$",
-"breakingPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\((\\w+)\\))?!: (.*)$"
+          "breakingPattern": "(?<!\\w)(!)(?=:)"
 
         }
       }
