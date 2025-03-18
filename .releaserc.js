@@ -6,7 +6,7 @@ module.exports = {
       {
         preset: false,
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
+          headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
           headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
         releaseRules: [
@@ -16,17 +16,19 @@ module.exports = {
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" }
         ],
-        // Transform function: if the breaking group equals "!", mark it as a breaking change.
         transform: (commit) => {
+          // Debug logging to verify the commit state
+          console.log("Before transform:", commit);
           if (commit.breaking === "!") {
             commit.breaking = true;
-            // Add a BREAKING CHANGE note so that semantic-release can detect it.
+            // Adding a BREAKING CHANGE note ensures detection by semantic-release
             commit.notes = commit.notes || [];
             commit.notes.push({
               title: "BREAKING CHANGE",
               text: commit.subject
             });
           }
+          console.log("After transform:", commit);
           return commit;
         }
       }
@@ -35,14 +37,14 @@ module.exports = {
       "@semantic-release/release-notes-generator",
       {
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
+          headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
           headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
         releaseRules: [
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
           { breaking: true, release: "major" },
-          { type: "breaking", release: "major" },
+          { type: "feat", release: "minor" },
           { type: "fix", release: "patch" }
         ]
       }
