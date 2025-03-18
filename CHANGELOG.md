@@ -1,3 +1,10 @@
+# [11.8.0](https://github.com/amgshouman/testRelease/compare/v11.7.0...v11.8.0) (2025-03-18)
+
+
+### Features
+
+* **api:** ! ([52fe25d](https://github.com/amgshouman/testRelease/commit/52fe25d2de6f339fb79e3c5f06127417524d8779))
+
 # [11.7.0](https://github.com/amgshouman/testRelease/compare/v11.6.0...v11.7.0) (2025-03-18)
 
 
