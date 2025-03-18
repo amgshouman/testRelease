@@ -21,7 +21,7 @@ module.exports = {
           { type: "feat", breaking: "!", release: "major" },
           { type: "fix", breaking: "!", release: "major" },
           { breaking: "!", release: "major" },
-          { type: "feat", release: "minor" },
+          { type: "breaking", release: "major" },
           { type: "fix", release: "patch" }
         ],
         // Transform function: if the commit has "!" as breaking,
