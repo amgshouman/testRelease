@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/amgshouman/testRelease/compare/v1.18.0...v1.19.0) (2025-03-18)
+
+
+### Features
+
+* **api:** send an email to the customer when a producta ([47a454d](https://github.com/amgshouman/testRelease/commit/47a454d0cd6a64c624d32b502dfe7ce021d1eadc))
+
 # [1.18.0](https://github.com/amgshouman/testRelease/compare/v1.17.0...v1.18.0) (2025-03-18)
 
 
