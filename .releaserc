@@ -5,29 +5,15 @@
       "@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\]\\s+(\\w+)(?:\\(([-\\w]+)\\))?(!)?: (.+)$",
-          "headerCorrespondence": ["type", "scope", "breaking", "subject"]
-        },
-        "releaseRules": [
-          { "breaking": "!", "release": "major" },
-          { "type": "feat", "release": "minor" },
-          { "type": "fix", "release": "patch" },
-          { "type": "perf", "release": "patch" },
-          { "type": "chore", "release": false },
-          { "type": "docs", "release": false },
-          { "type": "refactor", "release": "patch" },
-          { "type": "test", "release": false },
-          { "type": "ci", "release": false },
-          { "type": "build", "release": "patch" }
-        ]
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)!?(?:\\(([-\\w]+)\\))?: (.+)$"
+        }
       }
     ],
     [
       "@semantic-release/release-notes-generator",
       {
         "parserOpts": {
-          "headerPattern": "^\\[UI-\\d+\\]\\s+(\\w+)(?:\\(([-\\w]+)\\))?(!)?: (.+)$",
-          "headerCorrespondence": ["type", "scope", "breaking", "subject"]
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)!?(?:\\(([-\\w]+)\\))?: (.+)$"
         }
       }
     ],
