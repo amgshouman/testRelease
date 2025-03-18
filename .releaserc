@@ -8,13 +8,14 @@
 "headerPattern": "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$"
 ,          "headerCorrespondence": ["type", "scope", "breaking", "subject"]
         },
-        "releaseRules": [
+"releaseRules": [
   { "type": "feat", "release": "minor" },
   { "type": "fix", "release": "patch" },
-  { "type": "feat!", "breaking": true, "release": "major" },
-  { "type": "fix", "breaking": true, "release": "major" },
-  { "breaking": true, "release": "major" }
+  { "type": "feat", "breaking": "!", "release": "major" },
+  { "type": "fix", "breaking": "!", "release": "major" },
+  { "breaking": "!", "release": "major" }
 ]
+
 
       }
     ],
