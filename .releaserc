@@ -5,8 +5,7 @@
       "@semantic-release/commit-analyzer",
       {
         "preset": "conventionalcommits",
-        "headerPattern": "^\\w+!?: (.*)$",
-        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+"headerPattern": "^\\[UI-\\d+\\] (\\w+)!?: (.*)$"
 
 
       }
@@ -16,9 +15,7 @@
       "@semantic-release/release-notes-generator",
       {
         "preset": "conventionalcommits",
-        "headerPattern": "^\\w+!?: (.*)$",
-        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
-
+"headerPattern": "^\\[UI-\\d+\\] (\\w+)!?: (.*)$"
       }
     ],
 
