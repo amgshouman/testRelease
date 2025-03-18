@@ -1,3 +1,5 @@
+# [12.0.0](https://github.com/amgshouman/testRelease/compare/v11.13.0...v12.0.0) (2025-03-18)
+
 # [11.13.0](https://github.com/amgshouman/testRelease/compare/v11.12.0...v11.13.0) (2025-03-18)
 
 
