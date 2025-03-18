@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/amgshouman/testRelease/compare/v1.6.5...v1.7.0) (2025-03-18)
+
+
+### Bug Fixes
+
+* **test:** okok1 ([56b6c01](https://github.com/amgshouman/testRelease/commit/56b6c01033e2dc8f0352a03a32ec0bbbfbb79630))
+
+
+### Features
+
+* **test:** okok1 ([069104e](https://github.com/amgshouman/testRelease/commit/069104e72b33536f2d72c4e26795330a16ddee29))
+* **test:** okok1 ([bd73195](https://github.com/amgshouman/testRelease/commit/bd73195b90038269ad8e400fffd4740045898d09))
+
 ## [1.6.5](https://github.com/amgshouman/testRelease/compare/v1.6.4...v1.6.5) (2025-03-17)
 
 
