@@ -8,13 +8,14 @@
         "headerPattern": "^\\w+!?: (.*)$",
         "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
 
-        
+
       }
     ],
 
     [
       "@semantic-release/release-notes-generator",
       {
+        "preset": "conventionalcommits",
         "headerPattern": "^\\w+!?: (.*)$",
         "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
 
