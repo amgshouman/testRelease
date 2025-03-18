@@ -42,7 +42,7 @@ module.exports = {
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
           { breaking: true, release: "major" },
-          { type: "feat", release: "minor" },
+          { type: "breaking", release: "major" },
           { type: "fix", release: "patch" }
         ]
       }
