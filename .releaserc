@@ -4,18 +4,20 @@
     [
       "@semantic-release/commit-analyzer",
       {
-        "preset": "conventionalcommits",
-        "headerPattern": "^\\w+!?: (.*)$"
-
-
+          "preset": "conventionalcommits",
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+!?:) (.*)$"
+        
       }
     ],
 
     [
       "@semantic-release/release-notes-generator",
       {
-        "preset": "conventionalcommits",
-        "headerPattern": "^\\w+!?: (.*)$"
+        
+          "preset": "conventionalcommits",
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+!?:) (.*)$"
+        
+        
 
       }
     ],
