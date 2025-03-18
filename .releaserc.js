@@ -23,6 +23,7 @@ module.exports = {
           { breaking: "!", release: "major" },
           { type: "breaking", release: "major" },
           { type: "fix", release: "patch" }
+          
         ],
         // Transform function: if the commit has "!" as breaking,
         // convert it to boolean true and add a breaking note.
