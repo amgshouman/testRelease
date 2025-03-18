@@ -4,14 +4,18 @@
     [
       "@semantic-release/commit-analyzer",
       {
+        "headerPattern": "^\\w+!?: (.*)$",
+        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
 
       }
     ],
 
-    
+
     [
       "@semantic-release/release-notes-generator",
       {
+        "headerPattern": "^\\w+!?: (.*)$",
+        "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
 
       }
     ],
