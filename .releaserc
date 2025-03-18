@@ -9,11 +9,13 @@
 ,          "headerCorrespondence": ["type", "scope", "breaking", "subject"]
         },
         "releaseRules": [
-          { "type": "feat", "release": "minor" },
-          { "type": "fix", "release": "patch" },
-          { "type": "breaking", "release": "major" },
-          { "breaking": "!", "release": "major" } 
-        ]
+  { "type": "feat", "release": "minor" },
+  { "type": "fix", "release": "patch" },
+  { "type": "feat", "breaking": true, "release": "major" },
+  { "type": "fix", "breaking": true, "release": "major" },
+  { "breaking": true, "release": "major" }
+]
+
       }
     ],
 
