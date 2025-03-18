@@ -9,7 +9,6 @@
           "headerCorrespondence": ["type", "scope", "breaking", "subject"]
         },
         "releaseRules": [
-          { "breaking": true, "release": "major" },
           { "type": "feat", "release": "minor" },
           { "type": "fix", "release": "patch" },
           { "type": "breaking", "release": "major" },
