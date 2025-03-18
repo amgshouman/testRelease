@@ -5,33 +5,17 @@
       "@semantic-release/commit-analyzer",
       {
         "parserOpts": {
-"headerPattern": "^\\[UI-\\d+\\] (?<type>\\w+)(?<breaking>!)?(?:\\((?<scope>[-\\w]+)\\))?: (?<subject>.+)$"
-        },
-        "releaseRules": [
-          {
-            "breaking": true,
-            "release": "major"
-          },
-          {
-            "type": "feat",
-            "release": "minor"
-          },
-          {
-            "type": "fix",
-            "release": "patch"
-          }
-        ]
-        
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)!?(?:\\(([-\\w]+)\\))?: (.+)$"
+        }
       }
     ],
     [
       "@semantic-release/release-notes-generator",
       {
         "parserOpts": {
-"headerPattern": "^\\[UI-\\d+\\] (?<type>\\w+)(?<breaking>!)?(?:\\((?<scope>[-\\w]+)\\))?: (?<subject>.+)$"
+          "headerPattern": "^\\[UI-\\d+\\] (\\w+)!?(?:\\(([-\\w]+)\\))?: (.+)$"
         }
       }
-
     ],
     "@semantic-release/changelog",
     [
