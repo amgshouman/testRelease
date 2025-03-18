@@ -1,3 +1,26 @@
+# [11.9.0](https://github.com/amgshouman/testRelease/compare/v11.8.0...v11.9.0) (2025-03-18)
+
+
+### Bug Fixes
+
+* **login:** update session handling ([8649c04](https://github.com/amgshouman/testRelease/commit/8649c041491ebab73ce508a1901756fabd351575))
+
+
+### Features
+
+* **api:** send an email to the customer when a producta ([5b12511](https://github.com/amgshouman/testRelease/commit/5b12511abb4ef3ef0cd59e7a66a5c5c9afd6e4df))
+* **api:** send an email to the customer when a producta ([d7f6d38](https://github.com/amgshouman/testRelease/commit/d7f6d386a2091d109d0fc784b6fae19fb9138184))
+* **api:** send an email to the customer when a producta ([7ae786a](https://github.com/amgshouman/testRelease/commit/7ae786afffd76994ef1434d7a680235f4fc1f957))
+* **api:** send an email to the customer when a producta ([782d2c5](https://github.com/amgshouman/testRelease/commit/782d2c56235893b2140151252a52f9b259e32824))
+* **auth:** introduce a breaking change ([36684aa](https://github.com/amgshouman/testRelease/commit/36684aae911cc2fa20135196b0c09815dec2f55f))
+* **auth:** introduce a breaking change ([f90f6ee](https://github.com/amgshouman/testRelease/commit/f90f6eed1639dec16eadb04d62d19e4a0d56b0cc))
+* **auth:** introduce a breaking change ([8b22922](https://github.com/amgshouman/testRelease/commit/8b2292208d2ca2a6d3224b16a8b779972fd572c2))
+* **auth:** introduce a breaking change ([33b86fd](https://github.com/amgshouman/testRelease/commit/33b86fd353a6d029f89b2f630a6ffc536bcaf1e9))
+* **auth:** introduce a breaking change ([858db2d](https://github.com/amgshouman/testRelease/commit/858db2d6b735e5544141244fd45a0e4aff87d12a))
+* **auth:** introduce a breaking change ([8e0acc6](https://github.com/amgshouman/testRelease/commit/8e0acc65997fb02834f095ec45c05c6c7996ba7d))
+* **test:** introduce a breaking change ([5ba437f](https://github.com/amgshouman/testRelease/commit/5ba437f78612ee00f1024f29d45318e8566efaef))
+* **test:** introduce a breaking change ([a03d9a4](https://github.com/amgshouman/testRelease/commit/a03d9a4d926dc10e66e5902bb1357e87204c5fa9))
+
 # [11.8.0](https://github.com/amgshouman/testRelease/compare/v11.7.0...v11.8.0) (2025-03-18)
 
 
