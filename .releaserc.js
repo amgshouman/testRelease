@@ -6,22 +6,30 @@ module.exports = {
       {
         preset: false,
         parserOpts: {
+          // Matches commit messages like:
+          // [UI-123] feat(test)!: introduce a breaking change
           headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
           headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
+        // These rules trigger a major release if either:
+        // - commit.breaking is true (set by our transform function)
+        // - commit.breaking is the literal "!" (if the transform isn’t applied)
         releaseRules: [
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
           { breaking: true, release: "major" },
+          { type: "feat", breaking: "!", release: "major" },
+          { type: "fix", breaking: "!", release: "major" },
+          { breaking: "!", release: "major" },
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" }
         ],
+        // Transform function: if the commit has "!" as breaking,
+        // convert it to boolean true and add a breaking note.
         transform: (commit) => {
-          // Debug logging to verify the commit state
           console.log("Before transform:", commit);
           if (commit.breaking === "!") {
             commit.breaking = true;
-            // Adding a BREAKING CHANGE note ensures detection by semantic-release
             commit.notes = commit.notes || [];
             commit.notes.push({
               title: "BREAKING CHANGE",
@@ -44,6 +52,9 @@ module.exports = {
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
           { breaking: true, release: "major" },
+          { type: "feat", breaking: "!", release: "major" },
+          { type: "fix", breaking: "!", release: "major" },
+          { breaking: "!", release: "major" },
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" }
         ]
