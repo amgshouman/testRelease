@@ -1,82 +1,86 @@
-/**
- * @type {import('semantic-release').GlobalConfig}
- */
-
 module.exports = {
   branches: ["main"],
   plugins: [
     [
       "@semantic-release/commit-analyzer",
       {
+        preset: false,
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?(!)?: (.+)$",
-          headerCorrespondence: ["type", "scope", "breaking", "subject"],
-          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
+          // Matches commit messages like:
+          // [UI-123] feat(test)!: introduce a breaking change
+          headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
+          headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
+        // These rules trigger a major release if either:
+        // - commit.breaking is true (set by our transform function)
+        // - commit.breaking is the literal "!" (if the transform isn’t applied)
         releaseRules: [
-          { type: "feat", release: "minor" },
-          { type: "fix", release: "patch" },
-          { type: "revert", release: "patch" },
-          { type: "perf", release: "patch" },
-          { type: "docs", release: false },
-          { type: "refactor", release: false },
-          { type: "test", release: false },
-          { type: "build", release: false },
-          { type: "ci", release: false },
-          { type: "chore", release: false },
+          { type: "feat", breaking: true, release: "major" },
+          { type: "fix", breaking: true, release: "major" },
+          { breaking: true, release: "major" },
+          { type: "feat", breaking: "!", release: "major" },
+          { type: "fix", breaking: "!", release: "major" },
+          { breaking: "!", release: "major" },
+          { type: "breaking", release: "major" },
+          { type: "fix", release: "patch" }
+          
         ],
-      },
+        // Transform function: if the commit has "!" as breaking,
+        // convert it to boolean true and add a breaking note.
+        transform: (commit) => {
+          console.log("Before transform:", commit);
+          if (commit.breaking === "!") {
+            commit.breaking = true;
+            commit.notes = commit.notes || [];
+            commit.notes.push({
+              title: "BREAKING CHANGE",
+              text: commit.subject
+            });
+          }
+          console.log("After transform:", commit);
+          return commit;
+        }
+      }
     ],
     [
       "@semantic-release/release-notes-generator",
       {
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?(!)?: (.+)$",
-          headerCorrespondence: ["type", "scope", "breaking", "subject"],
+          headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
+          headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
-        writerOpts: {
-          header: function (context) {
-            const date = new Date().toISOString().split("T")[0];
-            return `# 🚀 Release v${context.version} - ${date} 🎉\n\n`;
-          },
-          commitsSort: ["subject", "scope"],
-        },
-        presetConfig: {
-          types: [
-            { type: "feat", section: "💥 Breaking Changes", hidden: false },
-            { type: "feat", section: "🚀 Features", hidden: false },
-            { type: "fix", section: "🐛 Bug Fixes", hidden: false },
-            { type: "revert", section: "⏪ Reverts", hidden: false },
-            { type: "perf", section: "⚡ Performance Improvements", hidden: false },
-            { type: "docs", section: "📚 Documentation", hidden: false },
-            { type: "refactor", section: "🛠 Code Refactoring", hidden: false },
-            { type: "test", section: "✅ Tests", hidden: true },
-            { type: "build", section: "🏗 Builds", hidden: false },
-            { type: "ci", section: "🔧 CI/CD", hidden: true },
-            { type: "chore", section: "📦 Chores", hidden: true },
-          ],
-        },
-      },
+        releaseRules: [
+          { type: "feat", breaking: true, release: "major" },
+          { type: "fix", breaking: true, release: "major" },
+          { breaking: true, release: "major" },
+          { type: "feat", breaking: "!", release: "major" },
+          { type: "fix", breaking: "!", release: "major" },
+          { breaking: "!", release: "major" },
+          { type: "feat", release: "minor" },
+          { type: "fix", release: "patch" }
+        ]
+      }
     ],
     "@semantic-release/changelog",
     [
       "@semantic-release/npm",
       {
-        npmPublish: false,
-      },
+        npmPublish: false
+      }
     ],
     [
       "@semantic-release/github",
       {
-        assets: ["CHANGELOG.md"],
-      },
+        assets: ["CHANGELOG.md"]
+      }
     ],
     [
       "@semantic-release/git",
       {
         assets: ["package.json", "CHANGELOG.md"],
-        message: "chore(release): Update changelog & version to v${nextRelease.version}",
-      },
-    ],
-  ],
+        message:
+          "[UI-1] chore(release): update package.json version to v${nextRelease.version} and CHANGELOG.md"
+      }
+    ]
+  ]
 };
