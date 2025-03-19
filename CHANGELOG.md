@@ -1,3 +1,11 @@
+# 🚀 Release 17.0.4 - 2025-03-19 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* **(api):** **send an email to the customer when a producta** ([](https://github.com/amgshouman/testRelease/commit/(02d690fa91230494561d5e9d46030e7a5a7367bb)))
+
 # 🚀 Release 17.0.3 - 2025-03-19 🎉
 
 
