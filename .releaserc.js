@@ -9,7 +9,7 @@ module.exports = {
       "@semantic-release/commit-analyzer",
       {
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
+          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?!?: (.+)$",
           headerCorrespondence: ["type", "scope", "subject"],
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
         },
@@ -31,7 +31,7 @@ module.exports = {
       "@semantic-release/release-notes-generator",
       {
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?: (.+)$",
+          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?!?: (.+)$",
           headerCorrespondence: ["type", "scope", "subject"],
         },
         writerOpts: {
