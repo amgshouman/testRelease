@@ -55,7 +55,7 @@ module.exports = {
               build: "🏗 Builds",
               ci: "🔧 CI/CD",
               chore: "📦 Chores",
-              breaking: "BREAKINGGGGGG CHANGES!!!"
+              breaking: "🚨 BREAKING CHANGES!!!"
             };
           
             // Ensure the repository URL is correctly formed
