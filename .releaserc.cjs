@@ -33,7 +33,7 @@ module.exports = {
     [
       "@semantic-release/release-notes-generator",
       {
-        // preset: false, // Disable default preset
+        preset: angular, // Disable default preset
         parserOpts: {
           headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
           headerCorrespondence: ["type", "scope", "breaking", "subject"],
@@ -42,7 +42,6 @@ module.exports = {
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
           linkReferences: true,
-          commitPartial: '[View Commit]({{link}})', // Custom commit link text
           transform: (commit, context) => {
             if (!commit.type) return false;
           
