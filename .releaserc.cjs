@@ -61,15 +61,15 @@ module.exports = {
             console.log("Commit Data:", commit);
           
             // Use commit.hash if shortHash is undefined
-            const commitHash = commit.shortHash || commit.hash ? `(${commit.shortHash || commit.hash})` : "";
-          
-            return {
-              ...commit,
-              type: typeMap[commit.type] || commit.type,
-              scope: commit.scope ? `(${commit.scope})` : "",
-              subject: commit.subject ? `**${commit.subject}**` : "",
-              hash: commitHash // Add commit hash inside brackets
-            };
+            const commitHash = commit.shortHash ? `(${commit.shortHash})` : ""; 
+
+    return {
+      ...commit,
+      type: typeMap[commit.type] || commit.type,
+      scope: commit.scope ? `(${commit.scope})` : "",
+      subject: commit.subject ? `**${commit.subject}**` : "",
+      hash: commitHash // Ensure commit hash is included
+    };
           },          
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
