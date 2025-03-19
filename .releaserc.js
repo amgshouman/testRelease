@@ -6,38 +6,27 @@ module.exports = {
       {
         preset: false,
         parserOpts: {
-          // Matches commit messages like:
-          // [UI-123] feat(test)!: introduce a breaking change
-          headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
+          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
           headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
-        // These rules trigger a major release if either:
-        // - commit.breaking is true (set by our transform function)
-        // - commit.breaking is the literal "!" (if the transform isn’t applied)
         releaseRules: [
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
           { breaking: true, release: "major" },
-          { type: "feat", breaking: "!", release: "major" },
-          { type: "fix", breaking: "!", release: "major" },
-          { breaking: "!", release: "major" },
-          { type: "breaking", release: "major" },
+          { type: "feat", release: "minor" },
           { type: "fix", release: "patch" }
-          
         ],
-        // Transform function: if the commit has "!" as breaking,
-        // convert it to boolean true and add a breaking note.
+        // Transform function: if the breaking group equals "!", mark it as a breaking change.
         transform: (commit) => {
-          console.log("Before transform:", commit);
           if (commit.breaking === "!") {
             commit.breaking = true;
+            // Add a BREAKING CHANGE note so that semantic-release can detect it.
             commit.notes = commit.notes || [];
             commit.notes.push({
               title: "BREAKING CHANGE",
               text: commit.subject
             });
           }
-          console.log("After transform:", commit);
           return commit;
         }
       }
@@ -46,17 +35,14 @@ module.exports = {
       "@semantic-release/release-notes-generator",
       {
         parserOpts: {
-          headerPattern: /^\[UI-\d+\] (\w+)(?:\(([^)]+)\))?(!)?: (.*)$/,
+          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
           headerCorrespondence: ["type", "scope", "breaking", "subject"]
         },
         releaseRules: [
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
           { breaking: true, release: "major" },
-          { type: "feat", breaking: "!", release: "major" },
-          { type: "fix", breaking: "!", release: "major" },
-          { breaking: "!", release: "major" },
-          { type: "feat", release: "minor" },
+          { type: "breaking", release: "major" },
           { type: "fix", release: "patch" }
         ]
       }
