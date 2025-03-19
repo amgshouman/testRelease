@@ -57,8 +57,12 @@ module.exports = {
               chore: "📦 Chores"
             };
           
-            const commitHash = commit.shortHash ? `(${commit.shortHash})` : "";
-
+            // Log commit object to check what is available
+            console.log("Commit Data:", commit);
+          
+            // Use commit.hash if shortHash is undefined
+            const commitHash = commit.shortHash || commit.hash ? `(${commit.shortHash || commit.hash})` : "";
+          
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
@@ -66,7 +70,7 @@ module.exports = {
               subject: commit.subject ? `**${commit.subject}**` : "",
               hash: commitHash // Add commit hash inside brackets
             };
-          },
+          },          
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
         }
