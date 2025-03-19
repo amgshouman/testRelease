@@ -33,7 +33,7 @@ module.exports = {
     [
       "@semantic-release/release-notes-generator",
       {
-        preset: false, // Disable default preset
+        // preset: false, // Disable default preset
         parserOpts: {
           headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
           headerCorrespondence: ["type", "scope", "breaking", "subject"],
@@ -75,26 +75,18 @@ module.exports = {
                     : note.title,
                 }))
               : [];
-          
-            // Remove the link property from the commit object to avoid extra empty brackets.
-            const { link, ...rest } = commit;
-          
+                    
             return {
-              ...rest,
+              ...commit,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
-              subject: commit.subject ? `**${commit.subject}**` : "",
+              subject: `${commit.subject} test || `,
               notes,
-              link: "test",
-              references: "test",
-              mentions:"trest"
+              short: commitHash ? commitHash.substring(0, 7) : "",
             };
           },
           
-          
-          
-          
-                           
+                        
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
         }
