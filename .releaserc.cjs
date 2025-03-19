@@ -63,7 +63,7 @@ module.exports = {
             // Generate clickable commit hash using commit.short or commit.hash
             const commitHash = commit.commit?.short || commit.hash;
             const commitLink = commitHash ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))` : "";
-          
+          console.log("commit linkkkkkkkk: ",commitLink);
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
