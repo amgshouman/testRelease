@@ -41,7 +41,7 @@ module.exports = {
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
-          transform: (commit) => {
+          transform: (commit, context) => {
             if (!commit.type) return false;
           
             const typeMap = {
@@ -55,23 +55,24 @@ module.exports = {
               build: "🏗 Builds",
               ci: "🔧 CI/CD",
               chore: "📦 Chores",
-              breaking: "🚨 BREAKING CHANGES!!!"
             };
           
-            // Check if commit has breaking changes
-            const hasBreakingChange = commit.notes && commit.notes.length > 0;
+            // Ensure the repository URL is correctly formed
+            const repoUrl = context.repositoryUrl?.replace(/\.git$/, "");
           
+            // Generate clickable commit hash using commit.short or commit.hash
+            const commitHash = commit.commit?.short || commit.hash;
+            const commitLink = commitHash ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))` : "";
+          console.log("commit dataaaaa: ",commit);
+          console.log("commit linkkkkkkkk: ",commitLink," ",commitHash);
             return {
               ...commit,
-              type: hasBreakingChange ? typeMap["breaking"] : (typeMap[commit.type] || commit.type),
+              type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
-              subject: commit.subject ? `**${commit.subject}**` : "",
-              hash: commit.short ? `(${commit.short})` : "",
-              notes: hasBreakingChange ? commit.notes.map(note => note.text).join("\n") : ""
+              subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "", // Append the hash to the subject
+              hash: "test"
             };
-          }
-          
-          ,          
+          },
                            
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
