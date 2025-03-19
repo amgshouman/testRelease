@@ -1,3 +1,16 @@
+# 🚀 Release 20.0.0 - 2025-03-19 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* **(api):** **send an email to the customer when a producta** ([119f07b](undefined/commit/119f07bb5814ffc7ab9b20b0a9e95bcfdfd2c9b6)) ([](https://github.com/amgshouman/testRelease/commit/test))
+
+
+### BREAKING CHANGE
+
+* **(api):** TESTINGGGG
+
 # 🚀 Release 19.0.0 - 2025-03-19 🎉
 
 
