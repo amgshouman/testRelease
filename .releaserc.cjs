@@ -57,22 +57,36 @@ module.exports = {
               chore: "📦 Chores",
             };
           
-            // Ensure the repository URL is correctly formed
-            const repoUrl = context.repositoryUrl?.replace(/\.git$/, "");
-          
-            // Generate clickable commit hash using commit.short or commit.hash
+            // Build the repository URL for a clickable commit hash.
+            const repoUrl = context.repositoryUrl ? context.repositoryUrl.replace(/\.git$/, "") : "";
             const commitHash = commit.commit?.short || commit.hash;
-            const commitLink = commitHash ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))` : "";
-          console.log("commit dataaaaa: ",commit);
-          console.log("commit linkkkkkkkk: ",commitLink," ",commitHash);
+            const commitLink = repoUrl
+              ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))`
+              : `([${commitHash}])`;
+          
+            // Create a new notes array without modifying the original immutable objects.
+            const notes = commit.notes
+              ? commit.notes.map(note => ({
+                  ...note,
+                  title: note.title.toLowerCase().includes("breaking change")
+                    ? `💥 ${note.title}`
+                    : note.title,
+                }))
+              : [];
+          
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
-              subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "", // Append the hash to the subject
-              hash: "test"
+              subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "",
+              notes,
+              // Override the link property to avoid an extra empty link being rendered.
+              link: undefined,
             };
           },
+          
+          
+          
                            
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
