@@ -85,6 +85,7 @@ module.exports = {
               scope: commit.scope ? `(${commit.scope})` : "",
               subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "",
               notes,
+              link: "test"
             };
           },
           
