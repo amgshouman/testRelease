@@ -57,18 +57,22 @@ module.exports = {
               chore: "📦 Chores",
             };
           
-            // Ensure commit.hash is used
-            const commitHash = commit.shortHash || commit.hash;
-            const commitLink = commitHash ? `([${commitHash}](${context.repositoryUrl}/commit/${commit.hash}))` : "";
+            // Ensure the repository URL is correctly formed
+            const repoUrl = context.repositoryUrl?.replace(/\.git$/, "") || "https://github.com/amgshouman/testRelease";
+          
+            // Generate clickable commit hash using commit.short or commit.hash
+            const commitHash = commit.commit?.short || commit.hash;
+            const commitLink = commitHash ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))` : "";
           
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
               subject: commit.subject ? `**${commit.subject}**` : "",
-              hash: commitLink, // Add clickable commit hash
+              hash: commitLink, // Ensure commit hash is clickable
             };
-          },                   
+          },
+                           
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
         }
