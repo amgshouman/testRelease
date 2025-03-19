@@ -38,6 +38,7 @@ module.exports = {
           headerCorrespondence: ["type", "scope", "breaking", "subject"],
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         },
+        
         releaseRules: [
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
