@@ -83,7 +83,7 @@ module.exports = {
               ...rest,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
-              subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "",
+              subject: commit.subject ? `**${commit.subject}**` : "",
               notes,
               link: "test",
               references: "test",
