@@ -57,12 +57,14 @@ module.exports = {
               chore: "📦 Chores"
             };
           
+            const commitHash = commit.shortHash ? `(${commit.shortHash})` : "";
+
             return {
-              ...commit, // Keep the original commit properties
+              ...commit,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
               subject: commit.subject ? `**${commit.subject}**` : "",
-              hash: commit.shortHash ? `(${commit.shortHash})` : "" // Include commit hash if available
+              hash: commitHash // Add commit hash inside brackets
             };
           },
           commitGroupsSort: "title",
