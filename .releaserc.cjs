@@ -42,8 +42,8 @@ module.exports = {
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
           transform: (commit) => {
-            if (!commit.type) return;
-            
+            if (!commit.type) return false;
+          
             const typeMap = {
               feat: "🚀 Features",
               fix: "🐛 Bug Fixes",
@@ -56,18 +56,14 @@ module.exports = {
               ci: "🔧 CI/CD",
               chore: "📦 Chores"
             };
-
-            commit.type = typeMap[commit.type] || commit.type;
-
-            if (commit.scope) {
-              commit.scope = `(${commit.scope})`;
-            } else {
-              commit.scope = "";
-            }
-
-            commit.subject = commit.subject ? `**${commit.subject}**` : "";
-
-            return commit;
+          
+            return {
+              ...commit, // Keep the original commit properties
+              type: typeMap[commit.type] || commit.type,
+              scope: commit.scope ? `(${commit.scope})` : "",
+              subject: commit.subject ? `**${commit.subject}**` : "",
+              hash: commit.shortHash ? `(${commit.shortHash})` : "" // Include commit hash if available
+            };
           },
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
