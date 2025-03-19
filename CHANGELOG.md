@@ -1,3 +1,16 @@
+# 🚀 Release 25.0.0 - 2025-03-19 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* **(api):** **send an email to the customer when a producta** ([fd2e229]) ([](https://github.com/amgshouman/testRelease/commit/fd2e229c3d67676daefea2955a94b1bcf82a8685)), closes
+
+
+### 💥 BREAKING CHANGE
+
+* **(api):** TESTINGGGG
+
 # 🚀 Release 24.0.0 - 2025-03-19 🎉
 
 
