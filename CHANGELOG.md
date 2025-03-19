@@ -1,3 +1,15 @@
+# [17.0.0](https://github.com/amgshouman/testRelease/compare/v16.2.1...v17.0.0) (2025-03-19)
+
+
+### Bug Fixes
+
+* **api:** send an email to the customer when a producta ([20f4c32](https://github.com/amgshouman/testRelease/commit/20f4c32b13536f07079573e134e736fe8a75f7c8))
+
+
+### BREAKING CHANGES
+
+* **api:** TESTINGGGG
+
 ## [16.2.1](https://github.com/amgshouman/testRelease/compare/v16.2.0...v16.2.1) (2025-03-19)
 
 
