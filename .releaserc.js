@@ -53,6 +53,7 @@ module.exports = {
           { type: "ci", release: false },
           { type: "chore", release: false },
         ],
+        
         writerOpts: {
           header: function (context) {
             const date = new Date().toISOString().split("T")[0];
