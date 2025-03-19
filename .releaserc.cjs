@@ -63,13 +63,13 @@ module.exports = {
             // Generate clickable commit hash using commit.short or commit.hash
             const commitHash = commit.commit?.short || commit.hash;
             const commitLink = commitHash ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))` : "";
-          console.log("commit linkkkkkkkk: ",commitLink);
+          console.log("commit linkkkkkkkk: ",commitLink," ",commitHash);
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
-              subject: commit.subject ? `**${commit.subject}**` : "",
-              hash: commitLink, // Ensure commit hash is clickable
+              subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "", // Append the hash to the subject
+
             };
           },
                            
