@@ -58,13 +58,15 @@ module.exports = {
             };
           
             // Build the repository URL for a clickable commit hash.
-            const repoUrl = context.repositoryUrl ? context.repositoryUrl.replace(/\.git$/, "") : "";
+            const repoUrl = context.repositoryUrl
+              ? context.repositoryUrl.replace(/\.git$/, "")
+              : "";
             const commitHash = commit.commit?.short || commit.hash;
             const commitLink = repoUrl
               ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))`
               : `([${commitHash}])`;
           
-            // Create a new notes array without modifying the original immutable objects.
+            // Create a new notes array without mutating the original immutable objects.
             const notes = commit.notes
               ? commit.notes.map(note => ({
                   ...note,
@@ -74,16 +76,18 @@ module.exports = {
                 }))
               : [];
           
+            // Remove the link property from the commit object to avoid extra empty brackets.
+            const { link, ...rest } = commit;
+          
             return {
-              ...commit,
+              ...rest,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
               subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "",
               notes,
-              // Override the link property to avoid an extra empty link being rendered.
-              link: undefined,
             };
           },
+          
           
           
           
