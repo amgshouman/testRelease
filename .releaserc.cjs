@@ -69,7 +69,7 @@ module.exports = {
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
               subject: commit.subject ? `**${commit.subject}** ${commitLink}` : "", // Append the hash to the subject
-
+              hash: "test"
             };
           },
                            
