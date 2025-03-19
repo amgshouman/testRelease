@@ -34,9 +34,25 @@ module.exports = {
       "@semantic-release/release-notes-generator",
       {
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?(!)?: (.+)$",
-          headerCorrespondence: ["type", "scope", "subject"],
+          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
+          headerCorrespondence: ["type", "scope", "breaking", "subject"],
+          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         },
+        releaseRules: [
+          { type: "feat", breaking: true, release: "major" },
+          { type: "fix", breaking: true, release: "major" },
+          { breaking: true, release: "major" },
+          { type: "feat", release: "minor" },
+          { type: "fix", release: "patch" },
+          { type: "revert", release: "patch" },
+          { type: "perf", release: "patch" },
+          { type: "docs", release: false },
+          { type: "refactor", release: false },
+          { type: "test", release: false },
+          { type: "build", release: false },
+          { type: "ci", release: false },
+          { type: "chore", release: false },
+        ],
         writerOpts: {
           header: function (context) {
             const date = new Date().toISOString().split("T")[0];
