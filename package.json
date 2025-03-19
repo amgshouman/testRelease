@@ -1,6 +1,6 @@
 {
     "name": "testttt",
-    "version": "16.2.0",
+    "version": "16.2.1",
     "workspaces": [
         "libs/project1"
     ]

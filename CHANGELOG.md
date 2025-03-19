@@ -1,3 +1,10 @@
+## [16.2.1](https://github.com/amgshouman/testRelease/compare/v16.2.0...v16.2.1) (2025-03-19)
+
+
+### Bug Fixes
+
+* **api:** send an email to the customer when a producta ([d56ac74](https://github.com/amgshouman/testRelease/commit/d56ac74e4451a84abcb13da1c0661c2d3fdde150))
+
 ## [16.2.0](https://github.com/amgshouman/testRelease/compare/v16.1.0...v16.2.0) (2025-03-19)
 
 # [16.1.0](https://github.com/amgshouman/testRelease/compare/v16.0.0...v16.1.0) (2025-03-19)
