@@ -1,3 +1,10 @@
+# [13.4.0](https://github.com/amgshouman/testRelease/compare/v13.3.0...v13.4.0) (2025-03-19)
+
+
+### Features
+
+* **test:** BREAKING CHANGE: test ([3e0738c](https://github.com/amgshouman/testRelease/commit/3e0738c3507f027729b6aac34f3c8139942b8a3b))
+
 # [13.3.0](https://github.com/amgshouman/testRelease/compare/v13.2.0...v13.3.0) (2025-03-19)
 
 
