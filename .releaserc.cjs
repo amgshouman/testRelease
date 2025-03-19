@@ -55,10 +55,11 @@ module.exports = {
               build: "🏗 Builds",
               ci: "🔧 CI/CD",
               chore: "📦 Chores",
+              breaking: "BREAKINGGGGGG CHANGES!!!"
             };
           
             // Ensure the repository URL is correctly formed
-            const repoUrl = context.repositoryUrl?.replace(/\.git$/, "") || "https://github.com/amgshouman/testRelease";
+            const repoUrl = context.repositoryUrl?.replace(/\.git$/, "");
           
             // Generate clickable commit hash using commit.short or commit.hash
             const commitHash = commit.commit?.short || commit.hash;
