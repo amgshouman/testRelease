@@ -41,7 +41,7 @@ module.exports = {
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
-          transform: (commit) => {
+          transform: (commit, context) => {
             if (!commit.type) return false;
           
             const typeMap = {
@@ -54,23 +54,21 @@ module.exports = {
               test: "✅ Tests",
               build: "🏗 Builds",
               ci: "🔧 CI/CD",
-              chore: "📦 Chores"
+              chore: "📦 Chores",
             };
           
-            // Log commit object to check what is available
-            console.log("Commit Data:", commit);
+            // Ensure commit.hash is used
+            const commitHash = commit.shortHash || commit.hash;
+            const commitLink = commitHash ? `([${commitHash}](${context.repositoryUrl}/commit/${commit.hash}))` : "";
           
-            // Use commit.hash if shortHash is undefined
-            const commitHash = commit.short ? `(${commit.short})` : ""; 
-
-    return {
-      ...commit,
-      type: typeMap[commit.type] || commit.type,
-      scope: commit.scope ? `(${commit.scope})` : "",
-      subject: commit.subject ? `**${commit.subject}**` : "",
-      hash: commitHash // Ensure commit hash is included
-    };
-          },          
+            return {
+              ...commit,
+              type: typeMap[commit.type] || commit.type,
+              scope: commit.scope ? `(${commit.scope})` : "",
+              subject: commit.subject ? `**${commit.subject}**` : "",
+              hash: commitLink, // Add clickable commit hash
+            };
+          },                   
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
         }
