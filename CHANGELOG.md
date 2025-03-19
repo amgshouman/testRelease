@@ -1,3 +1,16 @@
+# 🚀 Release 23.0.0 - 2025-03-19 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* **(api):** **send an email to the customer when a producta** ([2aec124]) ([](https://github.com/amgshouman/testRelease/commit/2aec1240009135dd0f2344cd1468276491f32593))
+
+
+### 💥 BREAKING CHANGE
+
+* **(api):** TESTINGGGG
+
 # 🚀 Release 22.0.0 - 2025-03-19 🎉
 
 
