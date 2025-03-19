@@ -9,11 +9,14 @@ module.exports = {
       "@semantic-release/commit-analyzer",
       {
         parserOpts: {
-          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([-\\w]+)\\))?(!)?: (.+)$",
-          headerCorrespondence: ["type", "scope", "subject"],
-          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
+          headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
+          headerCorrespondence: ["type", "scope", "breaking", "subject"],
+          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         },
         releaseRules: [
+          { type: "feat", breaking: true, release: "major" },
+          { type: "fix", breaking: true, release: "major" },
+          { breaking: true, release: "major" },
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" },
           { type: "revert", release: "patch" },
@@ -24,7 +27,7 @@ module.exports = {
           { type: "build", release: false },
           { type: "ci", release: false },
           { type: "chore", release: false },
-        ],
+        ]
       },
     ],
     [
