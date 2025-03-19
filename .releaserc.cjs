@@ -61,7 +61,7 @@ module.exports = {
             console.log("Commit Data:", commit);
           
             // Use commit.hash if shortHash is undefined
-            const commitHash = commit.shortHash ? `(${commit.shortHash})` : ""; 
+            const commitHash = commit.short ? `(${commit.short})` : ""; 
 
     return {
       ...commit,
