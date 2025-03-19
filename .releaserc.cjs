@@ -41,6 +41,8 @@ module.exports = {
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
+          linkReferences: true,
+          commitPartial: '[View Commit]({{link}})', // Custom commit link text
           transform: (commit, context) => {
             if (!commit.type) return false;
           
@@ -80,9 +82,11 @@ module.exports = {
               ...commit,
               type: typeMap[commit.type] || commit.type,
               scope: commit.scope ? `(${commit.scope})` : "",
-              subject: `${commit.subject} test || `,
+              subject: `${commit.subject} | `,
               notes,
+              hash: commitHash,
               short: commitHash ? commitHash.substring(0, 7) : "",
+              link: commitLink,
             };
           },
           
