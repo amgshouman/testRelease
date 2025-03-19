@@ -1,3 +1,16 @@
+# 🚀 Release 26.0.0 - 2025-03-19 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* **(api):** send an email to the customer when a producta test ||  ([](https://github.com/amgshouman/testRelease/commit/17e470c0303b1f2ff2f84df3598daf62d531b774))
+
+
+### 💥 BREAKING CHANGE
+
+* **(api):** TESTINGGGG
+
 # 🚀 Release 25.0.0 - 2025-03-19 🎉
 
 
