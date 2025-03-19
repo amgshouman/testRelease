@@ -16,19 +16,6 @@ module.exports = {
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" }
         ],
-        // Transform function: if the breaking group equals "!", mark it as a breaking change.
-        transform: (commit) => {
-          if (commit.breaking === "!") {
-            commit.breaking = true;
-            // Add a BREAKING CHANGE note so that semantic-release can detect it.
-            commit.notes = commit.notes || [];
-            commit.notes.push({
-              title: "BREAKING CHANGE",
-              text: commit.subject
-            });
-          }
-          return commit;
-        }
       }
     ],
     [
