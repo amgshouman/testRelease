@@ -33,7 +33,6 @@ module.exports = {
     [
       "@semantic-release/release-notes-generator",
       {
-        preset: angular, // Disable default preset
         parserOpts: {
           headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
           headerCorrespondence: ["type", "scope", "breaking", "subject"],
@@ -41,7 +40,6 @@ module.exports = {
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
-          linkReferences: true,
           transform: (commit, context) => {
             if (!commit.type) return false;
           
@@ -58,7 +56,6 @@ module.exports = {
               chore: "📦 Chores",
             };
           
-            // Build the repository URL for a clickable commit hash.
             const repoUrl = context.repositoryUrl
               ? context.repositoryUrl.replace(/\.git$/, "")
               : "";
@@ -67,7 +64,6 @@ module.exports = {
               ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))`
               : `([${commitHash}])`;
           
-            // Create a new notes array without mutating the original immutable objects.
             const notes = commit.notes
               ? commit.notes.map(note => ({
                   ...note,
@@ -79,13 +75,10 @@ module.exports = {
                     
             return {
               ...commit,
-              type: typeMap[commit.type] || commit.type,
-              scope: commit.scope ? `(${commit.scope})` : "",
-              subject: `${commit.subject} | `,
-              notes,
-              hash: commitHash,
-              short: commitHash ? commitHash.substring(0, 7) : "",
-              link: commitLink,
+              // type: typeMap[commit.type] || commit.type,
+              // scope: commit.scope ? `(${commit.scope})` : "",
+              // subject: `${commit.subject} | `,
+              // notes,
             };
           },
           
