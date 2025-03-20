@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  branches: ["main"],
+  branches: ["master"],
   plugins: [
     [
       "@semantic-release/commit-analyzer",
@@ -16,7 +16,6 @@ module.exports = {
         releaseRules: [
           { type: "feat", breaking: true, release: "major" },
           { type: "fix", breaking: true, release: "major" },
-          { breaking: true, release: "major" },
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" },
           { type: "revert", release: "patch" },
