@@ -35,17 +35,14 @@ module.exports = {
       {
         parserOpts: {
           headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
-          linkReferences: true,
-
           headerCorrespondence: ["type", "scope", "breaking", "subject"],
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
-          commitPartial: "* {{#if scope}}({{scope}}): {{/if}}{{subject}} | [{{short}}]({{link}})",
+          commitPartial: "* {{#if scope}}({{scope}}): {{/if}}{{subject}} ([{{short}}]({{link}}))",
           transform: (commit, context) => {
             if (!commit.type) return false;
-
 
             const repoUrl = `${context.host}/${context.owner}/${context.repository}`;
             const commitLink = `${repoUrl}/commit/${commit.hash}`;
@@ -71,17 +68,14 @@ module.exports = {
                     : note.title,
                 }))
               : [];
-                    console.log("tesstttt:  ",commit.short);
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
               notes,
-              short: commit.short,
+              short: commit.commit.short,
               link: commitLink,
             };
-          },
-          
-                        
+          },                
           commitGroupsSort: "title",
           commitsSort: ["scope", "subject"]
         }
