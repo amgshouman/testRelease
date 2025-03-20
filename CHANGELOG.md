@@ -1,3 +1,20 @@
+# 🚀 Release 30.0.0 - 2025-03-20 🎉
+
+
+
+
+# 🚀 Release 30.0.0 - Wed Mar 19 2025 06:03:13 GMT+0200 (Eastern European Standard Time) 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* (api): send an email to the customer when a producta | [](https://github.com/amgshouman/testRelease/commit/2ae9990b2318e24baac156609273138bafb03bf5)
+
+### 💥 BREAKING CHANGE
+
+* **api:** TESTINGGGG
+
 # 🚀 Release 29.0.0 - 2025-03-19 🎉
 
 
