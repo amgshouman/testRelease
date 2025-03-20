@@ -35,14 +35,21 @@ module.exports = {
       {
         parserOpts: {
           headerPattern: "^\\[UI-\\d+\\] (\\w+)(?:\\(([^)]+)\\))?(!)?: (.*)$",
+          linkReferences: true,
+
           headerCorrespondence: ["type", "scope", "breaking", "subject"],
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
+          commitPartial: "* {{#if scope}}({{scope}}): {{/if}}{{subject}} | [{{short}}]({{link}})",
           transform: (commit, context) => {
             if (!commit.type) return false;
-          
+
+
+            const repoUrl = `${context.host}/${context.owner}/${context.repository}`;
+            const commitLink = `${repoUrl}/commit/${commit.hash}`;
+
             const typeMap = {
               feat: "🚀 Features",
               fix: "🐛 Bug Fixes",
@@ -55,15 +62,7 @@ module.exports = {
               ci: "🔧 CI/CD",
               chore: "📦 Chores",
             };
-          
-            const repoUrl = context.repositoryUrl
-              ? context.repositoryUrl.replace(/\.git$/, "")
-              : "";
-            const commitHash = commit.commit?.short || commit.hash;
-            const commitLink = repoUrl
-              ? `([${commitHash}](${repoUrl}/commit/${commit.hash}))`
-              : `([${commitHash}])`;
-          
+        
             const notes = commit.notes
               ? commit.notes.map(note => ({
                   ...note,
@@ -72,13 +71,13 @@ module.exports = {
                     : note.title,
                 }))
               : [];
-                    
+                    console.log("tesstttt:  ",commit.short);
             return {
               ...commit,
-              // type: typeMap[commit.type] || commit.type,
-              // scope: commit.scope ? `(${commit.scope})` : "",
-              // subject: `${commit.subject} | `,
-              // notes,
+              type: typeMap[commit.type] || commit.type,
+              notes,
+              short: commit.short,
+              link: commitLink,
             };
           },
           
