@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  branches: ["master"],
+  branches: ["main"],
   plugins: [
     [
       "@semantic-release/commit-analyzer",
@@ -39,7 +39,7 @@ module.exports = {
         },
         writerOpts: {
           headerPartial: `# 🚀 Release {{version}} - {{date}} 🎉\n\n`,
-          commitPartial: "* {{#if scope}}({{scope}}): {{/if}}{{subject}} ([{{short}}]({{link}}))",
+          commitPartial: "* {{#if scope}}({{scope}}): {{/if}}{{subject}} ([{{short}}]({{link}}))\n",
           transform: (commit, context) => {
             if (!commit.type) return false;
 
