@@ -59,15 +59,25 @@ module.exports = {
               ci: "🔧 CI/CD",
               chore: "📦 Chores",
             };
-        
             const notes = commit.notes
-              ? commit.notes.map(note => ({
+            ? commit.notes.map(note => {
+                console.log("Processing note:", note);
+                console.log("Original title:", note.title);
+          
+                const modifiedTitle = note.title.toLowerCase().includes("breaking change")
+                  ? `💥 ${note.title}`
+                  : note.title;
+          
+                console.log("Modified title:", modifiedTitle);
+          
+                return {
                   ...note,
-                  title: note.title.toLowerCase().includes("breaking change")
-                    ? `💥 ${note.title}`
-                    : note.title,
-                }))
-              : [];
+                  title: modifiedTitle,
+                };
+              })
+            : [];
+          
+              console.log("notes: ",commit.notes);
             return {
               ...commit,
               type: typeMap[commit.type] || commit.type,
