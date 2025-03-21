@@ -78,6 +78,7 @@ module.exports = {
             : [];
           
             
+
               console.log("notes: ",commit.notes);
             return {
               ...commit,
