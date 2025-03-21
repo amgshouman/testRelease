@@ -70,6 +70,7 @@ module.exports = {
           
                 console.log("Modified title:", modifiedTitle);
           
+                
                 return {
                   ...note,
                   title: modifiedTitle,
@@ -77,7 +78,7 @@ module.exports = {
               })
             : [];
           
-            
+
 
               console.log("notes: ",commit.notes);
             return {
