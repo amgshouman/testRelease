@@ -1,3 +1,16 @@
+# 🚀 Release 32.0.2 - 2025-03-21 🎉
+
+
+
+### 🐛 Bug Fixes
+
+* (api): send an email to the customer when a producta ([4ea41c5](https://github.com/amgshouman/testRelease/commit/4ea41c5114cdcb2253881ceab1ebfeead635e3ef))
+
+
+### 💥 BREAKING CHANGE
+
+* **api:** TESTINGGGG
+
 # 🚀 Release 32.0.1 - 2025-03-20 🎉
 
 
