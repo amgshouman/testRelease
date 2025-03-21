@@ -14,8 +14,6 @@ module.exports = {
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         },
         releaseRules: [
-          { type: "feat", breaking: true, release: "major" },
-          { type: "fix", breaking: true, release: "major" },
           { type: "feat", release: "minor" },
           { type: "fix", release: "patch" },
           { type: "revert", release: "patch" },
